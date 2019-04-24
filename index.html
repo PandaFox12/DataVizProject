@@ -1,0 +1,117 @@
+<!--
+Pascal Vos
+1422537vos
+-->
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/style.css"> 
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3-scale-radial.js"></script>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <title>WBL</title> 
+</head>
+<body role="document" style="overflow: auto">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <img src="./img/WBL.png">
+            </div>
+        </div>
+    </div>
+    <div class="container " id="main" role="main">
+        <section class="content_Top_Right">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <h2>WAUTER</h2>    
+                        Waterschapsbedrijf Limburg heeft 17 rioolwaterzuiveringsinstallaties en circa 150 gemalen in eigendom en beheer.<br> 
+                        In het verleden had elke zuivering zijn eigen procesautomatisering.<br> 
+                        Die bestond vaak uit verschillende apparatuur die niet op elkaar was afgestemd en inmiddels deels was verouderd.<br> 
+                        Niet efficiënt, niet effectief en onnodig duur.<br>
+                        <br> 
+                        Samen met Waterleiding Maatschappij Limburg N.V. heeft Waterschapsbedrijf Limburg het<br>
+                        concept WAUTER (WaterAUTomatisERing) ontwikkeld. Met dit centraal procesautomatiseringsproject is de aansturing<br>
+                        van de installaties van Waterschapsbedrijf Limburg gestandaardiseerd en geautomatiseerd.<br>
+                        Een hoogtepunt in de automatiseringsslag was de officiële ingebruikname van de gloednieuwe Centrale Regelkamer.<br> 
+                        Deze is gefaseerd ingevoerd en sinds medio 2016 volledig operationeel.<br>
+                        <br>
+                        Rechts ziet u de locaties van de gemalen Weergeven in een Interactieve kaart van limburg, elke stip is een gemaal locatie.<br>
+                        <br>
+                        <b>Gebruiksaanwijzing Kaart</b><br>
+                        <ul>
+                            <li>Wanneer u met de muis over een stip heen gaat wordt de locoatie van het gemaal weergeven.</li>
+                            <li>Voor in te zoomen scrolt u met de muis.</li>
+                            <li>Voor het gezichtsveld te veranderen houd u de linker muis knop ingedrukt en beweegt u de muis.</li> 
+                        </ul>  
+                        <br>
+                    </div>
+                    <div class="col-sm-3 content_Holder border_Shadow" id="map"></div>
+                </div>
+            </div>
+        </section>
+        <section class="content_Left">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-9 content_Holder_With_Functions border_Shadow" id="barChart">
+                        <div class="barChart_Functions"> 
+                            Minimaal aantal meldingen: <input type="number" id="min_Errors" required value="100" min="50" max="3000">
+                            Maximaal aantal meldingen: <input type="number" id="max_Errors" required value="400" min="50" max="3000">
+                            WBL Locatie: <select id="dropdown_Location">
+                                <option selected="selected">Allemaal</option>
+                            </select>
+                            <button id="button" onclick="load_Errors_BarChart(); updateBarChart(error_Number_List);">Weergeven</button>
+                        </div>
+                    </div>    
+                    <div class="col-sm-3">
+                        <h2>Aantal meldingen per locatie</h2>
+                        Alle gemalen worden 24/7 gemonitord.<br>
+                        Links ziet u een bar chart waar verschillende meldingen zijn weergeven.<br>
+                        In deze bar chart wordt aangegeven hoe<br>
+                        vaak een melding is voor gekomen tussen<br>
+                        1 january 2018 en 30 december 2018.<br>
+                        <br>
+                        Het is mogelijk om de hoeveelheid<br>
+                        meldingen aan te passen en de <br>
+                        locatie van de meldingen.
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="content_Right">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>Aantal meldingen per gemaal</h2>    
+                        Rechts ziet u een cirkel bar chart waarmee een snelle overzicht gecreëerd wordt, waarmee aangeduid wordt waar de meeste meldingen het hele jaar door zijn geweest.<br>
+                        De gebruiker kan de aantal filteren op een bepaalde melding aan de hand van een dropdown box.<br>
+                        <br>
+                        Om de werkelijke aantal te zien ga je met de muis op een bar staan.<br>
+                        Zo krijgt u de werkelijke aantal van de geselecteerde melding te zien.<br>
+                        Als er geen bar aanwezig is dan zijn er geen melding op de locatie.<br>
+                        (Sommige meldingen zijn locatie gebonden) 
+                    </div>
+                    <div class="col-sm-6 content_Holder_With_Functions border_Shadow" id="circle_BarChart">
+                        <div class="barChart_Functions"> 
+                            WBL Melding: <select id="dropdown_Errors">
+                                <option selected="selected">Allemaal</option>
+                            </select>
+                            <button id="button" onclick="load_Errors_Circle_BarChart(); updateCircleBarChart(error_Number_List_Circle_BarChart);">Weergeven</button>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="footer">
+        <p>Copyright 2019 Pascal Vos</p>
+    </div>
+    <script src="data/WBL_Locations.js"></script>
+    <script src="data/WBL_Errors.js"></script>
+    <script src="js/script.js"> </script>
+    </body>
+</html>

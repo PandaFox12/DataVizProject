@@ -1,0 +1,139 @@
+/*
+Pascal Vos
+1422537vos
+*/
+
+body 
+{
+    width: 100%;
+}
+
+img
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 40%;
+}
+
+#button
+{
+    margin: auto;
+    background-color: rgb(204, 220, 252);
+    border: 1px solid rgb(198, 212, 241);
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+}
+
+#button:hover 
+{
+    background-color: rgb(152, 184, 247);
+}
+
+.content_Holder 
+{
+	padding: 10px 10px 10px 10px;
+}
+
+.content_Holder_With_Functions 
+{
+	padding: 30px 10px 10px 0px;
+}
+
+.border_Shadow 
+{
+	margin: 15px 0;
+	background-color: #FFFFFF;
+	-webkit-box-shadow: 0 0 16px -5px rgba(50, 50, 50, 0.52);
+	-moz-box-shadow: 0 0 16px -5px rgba(50, 50, 50, 0.52);
+	box-shadow: 0 0 16px -5px rgba(50, 50, 50, 0.52);
+}
+
+#main 
+{
+	width: 100%;
+	padding: 0;
+}
+
+.content_Top_Right 
+{
+    padding-top: 80px;
+    background-color: #ECF0F1;
+    width: 100%;
+}
+
+.content_Right 
+{
+    background-color: #ECF0F1;
+    width: 100%;
+}
+
+.content_Left 
+{
+    background-color: rgb(204, 220, 252);
+    width: 100%;
+}
+
+#footer 
+{
+	background-color: white;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 15px;
+	margin-bottom: -30px;
+}
+
+svg
+{
+    display: block;
+    margin: auto;
+    width: 90%;
+    padding-left: 10px;
+}
+
+.tooltip_Map
+{
+    background-color: #ECF0F1;
+    border: 0;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20px;
+    height: 20px;
+    padding: 2px;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    width: 200px;
+}
+
+.tooltip_BarChart
+{
+    background-color: #ECF0F1;
+    border: 0;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 20px;
+    height: 20px;
+    padding: 2px;
+    pointer-events: none;
+    position: absolute;
+    text-align: center;
+    width: 50px;
+}
+
+.barChart_Functions
+{
+    text-align: center;
+}
+
+.axisY text
+{
+    font-weight: bold;
+}  
+
+.circle_BarChart_Functions
+{
+    text-align: center;
+}
